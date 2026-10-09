@@ -1,0 +1,68 @@
+@use '../Scss/helpers' as *;
+
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-dark-10);
+
+  &__navigation{
+    padding-block: rem(20);
+    letter-spacing: normal;
+    border-bottom: var(--border);
+
+    &-inner{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 1rem;
+    }
+  }
+
+  &__menu{
+    &-item{
+
+      &.is-active{
+        background-color: var(--color-dark-15);
+        border-radius: rem(8);
+      }
+    }
+  }
+
+  &__contact{
+    border-radius: rem(8);
+    @include mobile{
+      width: 80%;
+      align-self: center;
+    }
+  }
+
+  &__overlay{
+    @include mobile-above{
+      display: contents;
+    }
+
+    @include mobile{
+      position: fixed;
+      inset: 0;
+      padding: 1rem;
+      background-color: var(--color-dark-10);
+      transition-duration: var(--transit-duration);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 3rem;
+      font-size: rem(18);
+      
+      &:not(.is-active){
+        @include hide;
+        translate: 100%;
+      }
+    }
+  }
+
+  &__logo{
+    width: fluid(178, 119);
+  }
+
+}

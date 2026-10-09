@@ -1,0 +1,86 @@
+@use 'helpers' as *;
+
+
+html{
+  &.is-lock{
+    overflow: hidden;
+  }
+}
+
+//body
+body{
+  //font
+  @include fluid-text(18, 14);
+  font-family: var(--font-family);
+  letter-spacing: -0.06em;
+  color: var(--color-gray-90);
+  //background
+  background-color: var(--color-dark-10);
+
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex-grow: 1;
+}
+
+//headings
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6{
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+//headings size
+h1{
+  @include fluid-text(68, 34);
+  letter-spacing: normal;
+}
+h2{
+  @include fluid-text(48, 28);
+  letter-spacing: normal;
+}
+h3{
+  @include fluid-text(30, 20);
+}
+h4{
+  @include fluid-text(26, 18);
+}
+h5{
+  @include fluid-text(24, 18);
+}
+h6, .h6{
+  @include fluid-text(18, 16);
+}
+
+//animation
+a,
+button,
+label,
+input,
+textarea,
+svg *{
+  transition-duration: var(--transition-duration);
+}
+
+//link
+a{
+  color: inherit;
+  text-decoration: none;
+
+  @include hover{
+    color: var(--color-green-50);
+  }
+
+  :focus-visible {
+    outline: rem(2) dashed var(--color-white);
+    outline-offset: rem(4);
+    transition-duration: 0s !important;
+  }
+}
+

@@ -1,0 +1,43 @@
+@use '../Scss/helpers' as *;
+
+.burger-button{
+  @include square(rem(46));
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: rem(14) rem(10);
+  color: var(--color-green-80);
+  background-color: var(--color-dark-15);
+  border-radius: rem(6);
+  border: none;
+
+  &.is-active{
+    .burger-button__line{
+      &:first-child{
+        rotate: 45deg;
+        transform-origin: 0;
+        translate: 0.25em -0.1em;
+      }
+      &:nth-child(2){
+        rotate: -45deg;
+      }
+      &:last-child{
+        width: 0;
+      }
+    }
+  }
+
+  &__line{
+    width: 100%;
+    height: rem(3);
+    border-radius: 10rem;
+    background-color: currentColor;
+    transition-duration: var(--transit-duration);
+
+    &:last-child{
+      width: 55%;
+      align-self: end;
+    }
+  }
+}

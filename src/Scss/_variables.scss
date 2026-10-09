@@ -1,0 +1,48 @@
+@use 'helpers' as *;
+
+:root{
+
+  //absolute colors
+  --color-white: #fff;
+  --color-black: #000;
+
+  //green colors
+  --color-green-50: #9EFF00;
+  --color-green-60: #B1FF33;
+  --color-green-70: #C5FF66;
+  --color-green-80: #D8FF99;
+  --color-green-90: #ECFFCC;
+  --color-green-95: #F5FFE5;
+  --color-green-97: #F9FFF0;
+  --color-green-99: #FDFFFA;
+
+  //dark colors
+  --color-dark-10: #191919;
+  --color-dark-12: #242424;
+  --color-dark-15: #262626;
+  --color-dark-20: #333333;
+  --color-dark-30: #4C4C4D;
+
+  //gray colors
+  --color-gray-35: #59595A;
+  --color-gray-40: #656567;
+  --color-gray-60: #98989A;
+  --color-gray-90: #E6E6E6;
+
+  //font
+  --font-family: 'Barlow', sans-serif;
+
+  //animation
+  --transit-duration: 0.2s;
+
+  //container
+  --container-width: #{rem(1600)};
+  --container-padding-x: #{rem(16)};
+
+  @include laptop{
+    --container-width: #{rem(1280)};
+  }
+
+  //border
+  --border: #{rem(1)} solid var(--color-dark-15);
+}

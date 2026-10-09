@@ -1,0 +1,25 @@
+@use "../helpers" as *;
+
+.menu{
+  font-weight: 500;
+
+  &-list{
+    display: flex;
+    align-items: center;
+    column-gap: rem(2);
+
+    @include mobile{
+      flex-direction: column;
+      row-gap: 0.5rem;
+    }
+  }
+
+  &-item{
+    padding: rem(14) rem(28);
+    font-weight: 600;
+
+    @include laptop{
+      padding: rem(12) rem(22);
+    }
+  }
+}

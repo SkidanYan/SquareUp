@@ -1,0 +1,27 @@
+{
+  "name": "squareup",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "gulp",
+    "build": "npm run typecheck && gulp build",
+    "typecheck": "tsc --noEmit",
+    "clean": "gulp clean"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "del": "^8.0.1",
+    "esbuild": "^0.28.0",
+    "gulp": "^5.0.1",
+    "gulp-cli": "^3.1.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.99.0",
+    "typescript": "^6.0.3"
+  }
+}

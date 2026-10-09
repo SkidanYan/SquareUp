@@ -1,0 +1,17 @@
+
+@use './helpers/index';
+@use 'fonts';
+@use 'global';
+@use 'normalize';
+@use 'utils';
+@use 'variables';
+
+//blocks
+@use "./blocks/button";
+@use "./blocks/menu";
+
+// Компоненты
+@use "../header/header";
+@use "../header/burger-button";
+@use "../main/main";
+@use "../footer/footer";

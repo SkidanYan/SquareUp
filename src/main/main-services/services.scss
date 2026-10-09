@@ -1,0 +1,116 @@
+@use '../../Scss/helpers' as *;
+
+.services{
+  
+  &__main{
+    border-inline: var(--border);
+  }
+  &__head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: fluid(120, 50) rem(20);
+    flex-direction: column;
+    background: 
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(3, 3, 3, 0.98) 100%),
+      radial-gradient(ellipse at 30% 40%, rgba(0, 0, 0, 0) 0%, rgba(18, 18, 18, 0.85) 100%),
+      url('../../images/services-head-background.png') center / cover no-repeat;
+
+    &-subtitle{
+      text-align: center;
+    }
+  }
+  
+  &__body{
+    min-height: fluid(580, 350);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include mobile{
+      grid-template-columns: 1fr;
+    }
+  }
+  &__item{
+    padding: fluid(50, 30);
+    display: flex;
+    flex-direction: column;
+
+    @include mobile-above{
+      &:not(:last-child){
+        border-right: var(--border);
+      }
+    }
+    @include mobile{
+      &:not(:last-child){
+        border-bottom: var(--border);
+      }
+    }
+    &-logo{
+      @include square(fluid(88, 58));
+      color: var(--color-green-50);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: rem(10);
+      position: relative;
+      background: linear-gradient(180deg, #242424 0%, rgba(#242424, 0) 100%);
+
+      &::before{
+        content: '';
+        position: absolute;
+        inset: 0; 
+        border-radius: inherit;
+        padding: rem(1); 
+        background: linear-gradient(180deg, #2E2E2E 0%, rgba(#2E2E2E, 0) 100%);
+        
+        -webkit-mask: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff);
+        -webkit-mask-composite: xor;
+        
+        mask: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff);
+        mask-composite: exclude;
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+    }
+    &-title{
+      @include mobile-above{
+        margin-top: rem(40);
+
+        @include laptop{
+          margin-top: rem(30);
+        }
+      }
+    }
+
+    &-text{
+      margin-top: rem(20);
+      margin-bottom: rem(30);
+      
+      @include laptop{
+        margin-top: rem(14);
+      }
+      @include mobile{
+        margin-top: rem(24);
+      }
+    }
+
+    &-button{
+      margin-top: auto;
+      padding-block: rem(18);
+      border: none;
+
+      @include laptop{
+        padding-block: rem(14);
+      }
+    }
+    &-overlay{
+      @include mobile{
+        display: flex;
+        column-gap: rem(14);
+        align-items: center;
+      }
+    }
+  }
+  
+}
