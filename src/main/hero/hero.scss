@@ -5,7 +5,7 @@
 
   @include mobile{
     background: 
-      url('../../images/hero_background.png')
+      url('../images/hero_background.png')
       center/cover no-repeat;
     border-bottom: var(--border);
   }
@@ -17,7 +17,7 @@
     padding-top: rem(112);
     min-height: rem(750);
     background: 
-      url('../../images/hero_background.png')
+      url('../images/hero_background.png')
       center/cover no-repeat;
 
     @include laptop{
