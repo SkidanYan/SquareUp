@@ -48,8 +48,8 @@ h2{
 h3{
   @include fluid-text(30, 20);
 }
-h4{
-  @include fluid-text(26, 18);
+h4, .h4{
+  @include fluid-text(26, 20);
 }
 h5{
   @include fluid-text(24, 18);

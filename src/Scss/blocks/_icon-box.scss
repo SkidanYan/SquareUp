@@ -1,0 +1,40 @@
+@use "../helpers" as *;
+
+.icon-box{
+  @include square(fluid(88, 58));
+  color: var(--color-green-50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: rem(10);
+  position: relative;
+  background: linear-gradient(180deg, #242424 0%, rgba(#242424, 0) 100%);
+  
+  svg{
+    width: rem(40);
+
+    @include laptop{
+      width: rem(30);
+    }
+    @include mobile{
+      width: rem(26);
+    }
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    inset: 0; 
+    border-radius: inherit;
+    padding: rem(1); 
+    background: linear-gradient(180deg, #2E2E2E 0%, rgba(#2E2E2E, 0) 100%);
+        
+        -webkit-mask: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff);
+        -webkit-mask-composite: xor;
+        
+        mask: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff);
+        mask-composite: exclude;
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+}
